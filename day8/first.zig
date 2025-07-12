@@ -50,6 +50,9 @@ pub fn main() anyerror!void {
         }
     }
 
+    // Can use an old field (in case, you've red field data in 2d array)
+    // and save memory and runtime, but in my case,
+    // where I use iterator over lines - thats not appliable.
     var antinodes_field: [50][50]bool = .{.{false} ** 50} ** 50;
     var antennas_iter = antennas.valueIterator();
     while (antennas_iter.next()) |one_freq_ant| {
